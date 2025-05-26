@@ -1,0 +1,21 @@
+# API keys
+weather.js
+js/weather.js
+
+# Environment files
+.env
+*.env
+
+# Dependencies
+node_modules/
+
+# Editor files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
