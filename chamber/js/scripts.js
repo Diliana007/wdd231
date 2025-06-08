@@ -1,11 +1,24 @@
-// 📌 Footer Information
-document.getElementById('current-year').textContent = new Date().getFullYear();
-document.getElementById('last-modified').textContent = document.lastModified;
+// Set footer information
+document.addEventListener('DOMContentLoaded', function() {
+    const currentYear = document.getElementById('current-year');
+    const lastModified = document.getElementById('last-modified');
+    
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+    }
+    
+    if (lastModified) {
+        lastModified.textContent = document.lastModified;
+    }
 
-// 📱 Mobile Menu Toggle
-document.getElementById('menu-button').addEventListener('click', function () {
-    document.querySelector('.navigation').classList.toggle('active');
-    this.classList.toggle('open');
+    // Mobile menu toggle
+    const menuButton = document.getElementById('menu-button');
+    if (menuButton) {
+        menuButton.addEventListener('click', function() {
+            const nav = document.querySelector('.navigation');
+            if (nav) nav.classList.toggle('show');
+        });
+    }
 });
 
 // 🏠 Highlight Active Page
@@ -94,3 +107,4 @@ document.getElementById('list-view').addEventListener('click', () => {
 
 // 🚀 Initialize Fetching Members
 getMembers();
+

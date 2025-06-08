@@ -1,45 +1,75 @@
+// Weather API Configuration
+const apiKey = '0707533635cf58c0b814052d966828c6';
+const city = 'Coventry';
+const countryCode = 'GB';
 
- const apiKey = '0707533635cf58c0b814052d966828c6'; 
-const city = 'Coventry, UK';
-
-async function getWeather() {
+async function fetchWeather() {
     try {
-        const response = await fetch(
-            `https://api.openweathermap.org/data/2.5/forecast?q=${Coventry}&units=metric&appid=${'0707533635cf58c0b814052d966828c6'}`
+        // First get coordinates
+        const geoResponse = await fetch(
+            `https://api.openweathermap.org/geo/1.0/direct?q=${city},${countryCode}&limit=1&appid=${apiKey}`
         );
         
-        if (!response.ok) throw new Error('Weather data not available');
+        if (!geoResponse.ok) {
+            throw new Error('Failed to fetch location data');
+        }
+
+        const geoData = await geoResponse.json();
         
-        const data = await response.json();
+        if (!geoData || geoData.length === 0) {
+            throw new Error('Location not found');
+        }
+
+        const { lat, lon } = geoData[0];
         
-        // Current weather
-        document.getElementById('current-temp').textContent = 
-            ${Math.round(data.list[0].main.temp)}°C;
-        document.getElementById('weather-condition').textContent = 
-            data.list[0].weather[0].description;
+        // Then get weather data
+        const weatherResponse = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`
+        );
         
-        // 3-day forecast
-        const forecast = data.list.filter(item => 
-            item.dt_txt.includes('12:00:00')
-        ).slice(0, 3);
-        
-        const forecastHTML = forecast.map(day => `
-            <div class="forecast-day">
-                <p>${new Date(day.dt * 1000).toLocaleDateString('en-GB', { weekday: 'short' })}</p>
-                <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}.png" 
-                     alt="${day.weather[0].description}">
-                <p>${Math.round(day.main.temp)}°C</p>
-            </div>
-        `).join('');
-        
-        document.getElementById('forecast').innerHTML = forecastHTML;
+        if (!weatherResponse.ok) {
+            throw new Error(`HTTP error! status: ${weatherResponse.status}`);
+        }
+
+        const weatherData = await weatherResponse.json();
+        displayWeather(weatherData);
         
     } catch (error) {
-        console.error('Weather error:', error);
-        document.getElementById('weather-info').innerHTML = 
-            '<p class="error">Weather data currently unavailable</p>';
+        console.error('Error fetching weather:', error);
+        const weatherContainer = document.getElementById('weather-container');
+        if (weatherContainer) {
+            weatherContainer.innerHTML = `
+                <div class="error">
+                    <p>⚠ Weather data unavailable</p>
+                    <p>${error.message}</p>
+                    <button onclick="fetchWeather()">Try Again</button>
+                </div>
+            `;
+        }
     }
 }
 
+function displayWeather(data) {
+    const weatherElement = document.getElementById('current-weather');
+    if (!weatherElement) return;
+    
+    const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    
+    weatherElement.innerHTML = `
+        <div class="weather-display">
+            <img src="${iconUrl}" alt="${data.weather[0].description}">
+            <div class="weather-info">
+                <span class="temp">${Math.round(data.main.temp)}°C</span>
+                <span class="condition">${data.weather[0].description}</span>
+                <div class="details">
+                    <p>Humidity: ${data.main.humidity}%</p>
+                    <p>Wind: ${(data.wind.speed * 3.6).toFixed(1)} km/h</p>
+                    <p>Pressure: ${data.main.pressure} hPa</p>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
 // Initialize when page loads
-window.addEventListener('load', getWeather);
+document.addEventListener('DOMContentLoaded', fetchWeather);

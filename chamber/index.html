@@ -1,84 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-us">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Coventry City - Connecting local businesses">
-    <meta name="author" content="Diliana Thompson">
-    
-    <!-- Facebook Meta Tags -->
-    <meta property="og:title" content="Coventry City - Directory">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="Discover our comunity members">
-    <meta property="og:image" content="https://Diliana007.github.io/wdd231/chamber/images/logo.webp">
-    <meta property="og:url" content="https://Diliana007.github.io/wdd231/chamber/directory.html">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-
-    
-    <title>Coventry City Stake Directory</title>
+    <meta name="description" content="Coventry City Chamber of Commerce">
+    <title>Coventry City Chamber</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" href="./images/favicon.ico">
 </head>
 <body>
     <header>
+        <div class="header-container">
+            <img src="./images/logo.webp" alt="Chamber Logo" class="logo" width="200" height="100">
+            <div class="titles">
+                <h1>Coventry City Chamber</h1>
+                <h2>Building Business Community</h2>
+            </div>
+        </div>
         <nav>
-            <button id="menu-button">☰</button>
+            <button id="menu-button" aria-label="Toggle menu">☰</button>
             <ul class="navigation">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html">Join</a></li>
             </ul>
         </nav>
     </header>
-    <header>
-        <h1>Welcome to Coventry City</h1>
-        <h2>City of Culture 2021</h2>
-          <img src="images/logo.webp" 
-           alt="Coventry City"
-           width="200" 
-           height="100"
-           loading="lazy"
-           decoding="async"
-           class="logo">
-    </header>
-    
 
     <main>
-        <div class="view-toggle">
-            <button id="grid-view">Grid</button>
-            <button id="list-view">List</button>
-        </div>
-    <!-- Weather Section -->
-        <section class="weather-card">
-            <h2>Current Weather</h2>
-            <div id="weather-info">
-                <div class="current-weather">
-                    <span id="current-temp">--°C</span>
-                    <span id="weather-condition">Loading...</span>
-                </div>
-                <div class="weather-forecast" id="forecast"></div>
-            </div>
-            <!-- From weatherwidget.io -->
-            <div id="weatherwidget"></div>
-            <script src="https://weatherwidget.io/js/widget.min.js"></script>
+        <!-- Hero Section -->
+        <section class="hero">
+            <picture>
+                <source media="(min-width: 768px)" srcset="./images/hero-large.webp">
+                <img src="./images/hero-small.webp" alt="Coventry city skyline" loading="lazy">
+            </picture>
+            <a href="join.html" class="cta-button">Join Our Chamber</a>
         </section>
-            <!-- Members will be inserted here by JavaScript -->
-        </div>
+
+        <!-- Weather Section -->
+        <section class="weather-section">
+            <h2><span class="weather-icon">☀</span> Current Weather</h2>
+            <div id="weather-container">
+                <div class="weather-card">
+                    <div id="current-weather">
+                        <div class="loading-spinner"></div>
+                        <p>Loading weather data...</p>
+                    </div>
+                    <div id="forecast"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Member Spotlights -->
+        <section class="spotlights">
+            <h2>Featured Members</h2>
+            <div id="spotlight-container"></div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <h2>Ready to Grow Your Business?</h2>
+            <div class="cta-buttons">
+                <a href="join.html" class="cta-button">Join Now</a>
+                <a href="directory.html" class="cta-button secondary">View Directory</a>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="current-year"></span> Diliana007 | WDD 231</p>
-        <p>Last Modified: <span id="last-modified"></span></p>
-        <p>Contact: diliana.email@domain.com</p>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <img src="./images/logo.webp" alt="Chamber Logo" class="footer-logo">
+                <address>
+                    <p>Coventry City Chamber of Commerce</p>
+                    <p>123 Main Street, Coventry, UK</p>
+                    <p>📞 +44 024 1234 5678</p>
+                </address>
+            </div>
+            <div class="footer-base">
+                <p>&copy; <span id="current-year"></span> Coventry City Chamber</p>
+                <p>Diliana Thompson | WDD 231 Project</p>
+                <p>Last Modified: <span id="last-modified"></span></p>
+                <p>Weather data provided by <a href="https://openweathermap.org/" target="_blank">OpenWeather</a></p>
+            </div>
+        </div>
     </footer>
-    <script src="js/data.js"></script>
-    <script src="js/directory.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/weather.js"></script>
+
+    <script src="./js/scripts.js"></script>
+    <script src="./js/weather.js"></script>
+    <script src="./js/spotlights.js"></script>
 </body>
 </html>
