@@ -1,10 +1,11 @@
-const apiKey = '0707533635cf58c0b814052d966828c6'; 
-const city = 'Coventry,UK';
+
+ const apiKey = '0707533635cf58c0b814052d966828c6'; 
+const city = 'Coventry, UK';
 
 async function getWeather() {
     try {
         const response = await fetch(
-            https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}
+            `https://api.openweathermap.org/data/2.5/forecast?q=${Coventry}&units=metric&appid=${'0707533635cf58c0b814052d966828c6'}`
         );
         
         if (!response.ok) throw new Error('Weather data not available');
