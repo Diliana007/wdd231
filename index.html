@@ -1,43 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<main>
-    <p>Welcome to WDD 230 Course Home Page!</p>
-</main>
-
 <head>
-    <header>
-    <h1>Diliana Thompson | WDD 230</h1>
-</header>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Doe | WDD 230</title>
-    <meta name="description" content="WDD 230 Course Home Page">
-    <meta name="author" content="Diliana Thompson">
+    <meta name="description" content="WDD 231 Course Home Page - Web Frontend Development">
+    <meta name="author" content="Alex Johnson">
+    <title>WDD 231 - Web Frontend Development</title>
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/date.js" defer></script>
     <script src="scripts/course.js" defer></script>
 </head>
 <body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <div class="profile">
+                <img src="images/profile.jpg" alt="Profile Photo" class="profile-img">
+                <div class="profile-info">
+                    <h1>Diliana Thompson</h1>
+                    <p>Web Development Student</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
     <nav>
-        <button id="menu-btn" aria-expanded="false">☰</button>
-        <ul class="navigation">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="chamber.html">Chamber</a></li>
-            <li><a href="final.html">Final</a></li>
-            <li><a href="https://github.com/Diliana007/wdd231">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/diliana-t-aa31053/">LinkedIn</a></li>
-        </ul>
+        <div class="container nav-container">
+            <div class="logo">WDD 231</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">Final</a></li>
+                <li><a href="#"><i class="fab fa-github"></i> GitHub</a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
     </nav>
 
+    <!-- Main Content -->
+    <main class="container">
+        <h1 class="page-title">Web Frontend Development</h1>
+        
+        <div class="sections-grid">
+            <!-- About Section -->
+            <section class="section-card">
+                <div class="card-header">About Me</div>
+                <div class="card-body">
+                    <div class="about-content">
+                        <p>Hello! I'm Diliana Thompson, a passionate web development student currently pursuing a Certificate in Web and Computer Programming. I have a strong interest in creating responsive and accessible web applications that provide excellent user experiences.</p>
+                        <p>This course is an important step in my journey to become a professional frontend developer. I'm excited to learn modern web technologies and best practices that will help me build better websites.</p>
+                        <p>When I'm not coding, you can find me baking, talking with friends, or in the London Temple where I am a voluntary worker. I believe in continuous learning and am always exploring new technologies and methodologies.</p>
+                        <h2>Coventry</h2>
+                        <img src="images/about.webp" alt="Coventry" class="about-img">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Contact Section -->
+            <section class="section-card">
+                <div class="card-header">Contact Information</div>
+                <div class="card-body">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <strong>Email:</strong> diliana@email.com
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <strong>Phone:</strong> (555) 123-4567
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <strong>Location:</strong> Coventry, UK
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div>
+                                <strong>Website:</strong> dilianathompson.dev
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Courses Section -->
+        <section class="courses-section">
+            <div class="section-header">
+                <h2>Certificate in Web and Computer Programming</h2>
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All Courses</button>
+                    <button class="filter-btn" data-filter="WDD">WDD Courses</button>
+                    <button class="filter-btn" data-filter="CSE">CSE Courses</button>
+                </div>
+            </div>
+            
+            <div class="credits-summary">
+                <p>Total Credits Required:</p>
+                <div class="credits-count" id="totalCredits">12</div>
+            </div>
+            
+            <div class="courses-grid" id="coursesContainer">
+                <!-- Course cards will be dynamically inserted here -->
+            </div>
+            
+            <div class="certificate-info">
+                <h3>About the Certificate</h3>
+                <p>This certificate contains the courses required for the first certificate in the Software Development degree. It provides foundational knowledge in web and computer programming.</p>
+                
+                <div class="certificate-links">
+                    <a href="https://www.byupathway.edu/certificate/web-computer-programming" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Web & Computer Programming Certificate
+                    </a>
+                    <a href="https://www.byupathway.edu/bachelors-degree/software-development" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Software Development Degree
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; <span id="currentYear"></span> Diliana Thompson - Coventry</p>
-        <p id="lastModified"></p>
+        <div class="container footer-content">
+            <!-- First paragraph -->
+            <p id="copyright">&copy; <span id="currentyear"></span> | Diliana Thompson | United Kingdom </p>
+            
+            <!-- Second paragraph with last modified date -->
+            <p id="lastModified"></p>
+        </div>
     </footer>
+    
+    <!-- Font Awesome for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </body>
-
-
+</html>

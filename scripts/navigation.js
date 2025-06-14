@@ -1,7 +1,20 @@
-const menuBtn = document.querySelector('#menu-btn');
-const nav = document.querySelector('.navigation');
-
-menuBtn.addEventListener('click', () => {
-    nav.classList.toggle('show');
-    menuBtn.setAttribute('aria-expanded', nav.classList.contains('show'));
+// Navigation functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    
+    // Mobile navigation toggle
+    hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('show');
+    });
+    
+    // Add active class to current page
+    const currentPath = window.location.pathname;
+    const navItems = document.querySelectorAll('.nav-links a');
+    
+    navItems.forEach(item => {
+        if (item.getAttribute('href') === currentPath) {
+            item.classList.add('active');
+        }
+    });
 });
