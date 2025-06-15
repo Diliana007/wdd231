@@ -1,0 +1,20 @@
+Website Project Topic Submission
+
+1. Project Subject: 
+The Green Thumb Community Garden - A volunteer-run organization promoting urban gardening and wellness.
+
+2. Project Description: 
+This 3-page informational website will feature:  
+- Home Page: Mission statement, key benefits of community gardening (fresh food access, environmental impact, and mental health benefits like stress reduction and social connection)  
+- Get Involved Page: Volunteer opportunities, plot rentals, therapeutic gardening sessions schedule, and community events calendar  
+- Resources Page: Local gardening guides, seasonal planting tips, composting tutorials, and "Gardening for Wellbeing" section featuring mental health research and mindfulness exercises  
+
+3. Reason and Purpose: 
+I chose this subject because:  
+a) It combines my passions for sustainability and mental health advocacy  
+b) Provides tangible content to demonstrate course skills:  
+   - Dynamic elements (weather API for gardeners, calendar API for events)  
+   - JSON data handling for gardening resources  
+   - Accessibility focus for diverse audiences  
+   - UX optimization with calming design principles  
+c) Addresses community needs by creating a central hub that highlights gardening's therapeutic benefits and encourages participation as a wellness activity
