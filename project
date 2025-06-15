@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Thumb Community Garden - Site Plan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Green Thumb Community Garden - Website Plan</h1>
+    </header>
+    <main>
+        <section id="site-name">
+            <h2>Site Name</h2>
+            <p><strong>Green Thumb Community Garden</strong></p>
+            <p>This name was chosen because it reflects the mission of fostering gardening skills ("green thumb") while emphasizing community and wellness through urban gardening.</p>
+            <p><em>Optional domain availability:</em> greenthumbgarden.org</p>
+        </section>
+
+        <section id="site-purpose">
+            <h2>Site Purpose</h2>
+            <p>This website serves as a hub for urban gardeners, volunteers, and wellness advocates by providing:</p>
+            <ul>
+                <li>Information on community gardening benefits (food access, sustainability, mental health)</li>
+                <li>Volunteer opportunities and plot rental details</li>
+                <li>Educational resources (seasonal planting guides, composting, mindfulness exercises)</li>
+                <li>Event schedules and therapeutic gardening sessions</li>
+            </ul>
+        </section>
+
+        <section id="scenarios">
+            <h2>Scenarios (User Questions)</h2>
+            <ol>
+                <li>"How can I volunteer at the community garden?"</li>
+                <li>"What are the mental health benefits of gardening?"</li>
+                <li>"Where can I find local planting guides for beginners?"</li>
+            </ol>
+        </section>
+
+        <section id="color-schema">
+            <h2>Color Schema</h2>
+            <div class="color-box" style="background-color: #4a8f29;">
+                <p><strong>Primary Green (#4A8F29)</strong> - Used for headings, buttons, and accents</p>
+            </div>
+            <div class="color-box" style="background-color: #f5f5f5; border: 1px solid #ccc;">
+                <p><strong>Light Gray (#F5F5F5)</strong> - Background for sections and cards</p>
+            </div>
+            <div class="color-box" style="background-color: #333; color: white;">
+                <p><strong>Dark Text (#333)</strong> - Body text for readability</p>
+            </div>
+        </section>
+
+        <section id="typography">
+            <h2>Typography</h2>
+            <ul>
+                <li><strong>Headings:</strong> "Montserrat" (Google Fonts) - Clean and modern</li>
+                <li><strong>Body Text:</strong> "Open Sans" (Google Fonts) - Readable and friendly</li>
+            </ul>
+        </section>
+
+        <section id="wireframe">
+            <h2>Wireframe</h2>
+            <h3>Desktop View</h3>
+            <img src="desktop-wireframe.png" alt="Desktop wireframe layout" width="600">
+            <h3>Mobile View</h3>
+            <img src="mobile-wireframe.png" alt="Mobile wireframe layout" width="300">
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Green Thumb Community Garden</p>
+    </footer>
+</body>
+</html>
