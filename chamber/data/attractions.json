@@ -1,0 +1,52 @@
+{
+    "attractions": [
+        {
+            "name": "Coventry Cathedral",
+            "address": "Priory St, Coventry CV1 5FB",
+            "description": "The stunning ruins of the old cathedral stand beside the modern new cathedral, a symbol of reconciliation after WWII destruction.",
+            "image": "images/cathedral.webp"
+        },
+        {
+            "name": "Coventry Transport Museum",
+            "address": "Millennium Place, Hales St, Coventry CV1 1JD",
+            "description": "Home to the world's largest collection of British road transport, including many vehicles made in Coventry.",
+            "image": "images/transport-museum.webp"
+        },
+        {
+            "name": "St. Mary's Guildhall",
+            "address": "Bayley Ln, Coventry CV1 5RN",
+            "description": "One of Britain's finest medieval buildings with over 650 years of history, including being a prison for Mary Queen of Scots.",
+            "image": "images/guildhall.webp"
+        },
+        {
+            "name": "War Memorial Park",
+            "address": "Kenilworth Rd, Coventry CV3 6PT",
+            "description": "Beautiful 48.5 hectare park featuring memorials, gardens, sports facilities, and hosts major events throughout the year.",
+            "image": "images/memorial-park.webp"
+        },
+        {
+            "name": "Herbert Art Gallery & Museum",
+            "address": "Jordan Well, Coventry CV1 5QP",
+            "description": "Excellent museum showcasing Coventry's history, art, and culture with interactive exhibits for all ages.",
+            "image": "images/herbert-museum.webp"
+        },
+        {
+            "name": "Coombe Abbey Park",
+            "address": "Brinklow Rd, Coventry CV3 2AB",
+            "description": "500 acres of beautiful historic parkland with lakes, woodland walks, and a medieval abbey, perfect for nature lovers.",
+            "image": "images/coombe-abbey.webp"
+        },
+        {
+            "name": "Belgrade Theatre",
+            "address": "Belgrade Square, Corporation St, Coventry CV1 1GS",
+            "description": "Britain's first civic theatre, named in recognition of a gift of timber from Belgrade, offering top-quality productions.",
+            "image": "images/belgrade-theatre.webp"
+        },
+        {
+            "name": "FarGo Village",
+            "address": "Far Gosford St, Coventry CV1 5ED",
+            "description": "Creative quarter with independent shops, street food, arts spaces, and regular markets in a revitalized industrial area.",
+            "image": "images/fargo-village.webp"
+        }
+    ]
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Coventry - Explore the best attractions and features of our historic city">
+    <title>Discover Coventry | Coventry City Chamber</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/discover.css">
+    <link rel="icon" href="./images/favicon.ico">
+    <style>
+        /* Critical CSS to ensure everything displays immediately */
+        .demographics, .stat-item, .industries {
+            display: block !important;
+        }
+        .card {
+            display: block;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="./images/logo.webp" alt="Chamber Logo" class="logo" width="200" height="100">
+            <div class="titles">
+                <h1>Coventry City Chamber</h1>
+                <h2>Discover Our Historic City</h2>
+            </div>
+        </div>
+        <nav>
+            <button id="menu-button" aria-label="Toggle menu">☰</button>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="discover-main">
+        <aside class="sidebar">
+            <div class="visit-message" id="visitMessage">
+                <!-- Message will be inserted by JavaScript -->
+            </div>
+            
+            <div class="demographics">
+                <h2>Coventry at a Glance</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">360,000+</span>
+                        <span class="stat-label">Residents</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2,000+</span>
+                        <span class="stat-label">Years of History</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Parks & Green Spaces</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">30%</span>
+                        <span class="stat-label">Green Space Coverage</span>
+                    </div>
+                </div>
+                
+                <h3>Key Industries</h3>
+                <ul class="industries">
+                    <li>Automotive Manufacturing</li>
+                    <li>Higher Education</li>
+                    <li>Healthcare</li>
+                    <li>Creative & Digital</li>
+                    <li>Financial Services</li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="attractions">
+            <h1>Discover Coventry's Treasures</h1>
+            <p class="intro">Explore our city's rich history, vibrant culture, and modern attractions that make Coventry a wonderful place to live, work, and visit.</p>
+            
+            <div class="cards-grid" id="attractionsGrid">
+                <!-- Fallback content will be replaced by JavaScript -->
+                <div class="card">
+                    <h2>Coventry Cathedral</h2>
+                    <figure>
+                        <img src="./images/cathedral.webp" alt="Coventry Cathedral" loading="lazy">
+                    </figure>
+                    <div class="card-content">
+                        <address>Priory St, Coventry CV1 5FB</address>
+                        <p>The stunning ruins of the old cathedral stand beside the modern new cathedral, a symbol of reconciliation after WWII destruction.</p>
+                        <button>Learn More</button>
+                    </div>
+                </div>
+                <!-- Add 7 more cards as fallback -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <img src="./images/logo.webp" alt="Chamber Logo" class="footer-logo">
+                <address>
+                    <p>Coventry City Chamber of Commerce</p>
+                    <p>123 High Street, Coventry, CV1 1AB</p>
+                    <p>📞 +44 024 7655 1234</p>
+                </address>
+            </div>
+            <div class="footer-info">
+                <p>📧 discover@coventrychamber.org</p>
+                <p>📍 <a href="https://maps.google.com" target="_blank">View on Map</a></p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Twitter">TW</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-meta">
+            <p>&copy; <span id="currentYear"></span> Coventry City Chamber</p>
+            <p>Diliana Thompson | WDD 230 Project</p>
+            <p>Last Modified: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script>
+        // Critical scripts that must run immediately
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = document.lastModified;
+        
+        // Navigation toggle
+        document.getElementById('menu-button').addEventListener('click', function() {
+            document.querySelector('.navigation').classList.toggle('show');
+        });
+        
+        // Visit message functionality
+        const lastVisit = localStorage.getItem('lastVisit');
+        const currentDate = Date.now();
+        const visitMessage = document.getElementById('visitMessage');
+        
+        if (!lastVisit) {
+            visitMessage.innerHTML = '<p>Welcome! Let us know if you have any questions about Coventry.</p>';
+        } else {
+            const daysSince = Math.floor((currentDate - lastVisit) / (24*60*60*1000));
+            visitMessage.innerHTML = daysSince < 1 
+                ? '<p>Back so soon! Awesome!</p>' 
+                : <p>You last visited ${daysSince} ${daysSince === 1 ? 'day' : 'days'} ago.</p>;
+        }
+        localStorage.setItem('lastVisit', currentDate.toString());
+    </script>
+    
+    <script src="./scripts/discover.js" defer></script>
+</body>
+</html>

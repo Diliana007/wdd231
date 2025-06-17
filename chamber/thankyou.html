@@ -1,38 +1,16 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thank you for joining the Chamber of Commerce">
-    <meta name="author" content="Your Name">
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const submittedInfo = document.getElementById('submitted-info');
     
-    <link rel="stylesheet" href="css/styles.css">
-    
-    <title>Thank You</title>
-</head>
-<body>
-    <header>
-        <h1>Thank You for Joining Us!</h1>
-    </header>
-    <main>
-        <h2>Your Application Has Been Submitted</h2>
-        <div id="submitted-info"></div>
-    </main>
-    <footer>
-        <p>&copy; <span id="current-year"></span> Your Name | WDD 231</p>
-    </footer>
-    
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const userInfo = `
-            <p>First Name: ${urlParams.get('first-name')}</p>
-            <p>Last Name: ${urlParams.get('last-name')}</p>
-            <p>Email: ${urlParams.get('email')}</p>
-            <p>Mobile: ${urlParams.get('mobile')}</p>
-            <p>Business Name: ${urlParams.get('organization')}</p>
-            <p>Timestamp: ${urlParams.get('timestamp')}</p>
+    if (submittedInfo) {
+        submittedInfo.innerHTML = `
+            <p><strong>First Name:</strong> ${urlParams.get('first-name') || 'N/A'}</p>
+            <p><strong>Last Name:</strong> ${urlParams.get('last-name') || 'N/A'}</p>
+            <p><strong>Email:</strong> ${urlParams.get('email') || 'N/A'}</p>
+            <p><strong>Mobile:</strong> ${urlParams.get('mobile') || 'N/A'}</p>
+            <p><strong>Business Name:</strong> ${urlParams.get('organization') || 'N/A'}</p>
+            <p><strong>Membership Level:</strong> ${urlParams.get('membership') || 'N/A'}</p>
+            <p><strong>Timestamp:</strong> ${urlParams.get('timestamp') || 'N/A'}</p>
         `;
-        document.getElementById('submitted-info').innerHTML = userInfo;
-    </script>
-</body>
-</html>
+    }
+</script>
