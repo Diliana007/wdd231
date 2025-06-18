@@ -97,7 +97,7 @@ function getMembershipLevel(level) {
 }
 
 // 🔄 View Toggle (Grid / List)
-document.getElementById('grid-view').addEventListener('click', () => {
+document.getElementById('grid-view').addEventListener('click' () => {
     document.getElementById('member-container').className = 'grid-view';
 });
 
