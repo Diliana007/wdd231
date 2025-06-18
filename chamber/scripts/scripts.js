@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 🗂 Embedded member data to avoid CORS issues
 function loadMembers() {
-    // Embedded member data (replaces the external JSON file)
     const members = [
         {
             "name": "Coventry Tech Solutions",
@@ -322,7 +321,7 @@ function displayMembers(members) {
         badge.className = `membership-badge ${member.membershipLevel}`;
         badge.textContent = getMembershipLevel(member.membershipLevel);
         content.appendChild(badge);
-        
+
         card.appendChild(content);
         container.appendChild(card);
     });
