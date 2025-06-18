@@ -1,4 +1,3 @@
-// spotlights.js
 // Member data (simulating what would be in members.json)
 const members = [
     {
