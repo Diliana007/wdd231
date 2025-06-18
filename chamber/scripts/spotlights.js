@@ -1,5 +1,13 @@
+/**
+ * Displays featured member spotlights
+ * - Fetches member data from JSON
+ * - Filters for Gold/Silver members
+ * - Randomly selects 2 members
+ * - Creates spotlight cards
+ */
+console.log("Raw response:", await response.text());
 
-[async function displaySpotlights()] {
+async function displaySpotlights() {
     try {
         const response = await fetch('./data/members.json');
         if (!response.ok) {
