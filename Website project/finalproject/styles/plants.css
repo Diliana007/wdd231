@@ -1,0 +1,107 @@
+/* Hero & Feature Section */
+.hero-banner {
+    background: url('../images/garden-banner.jpg') center/cover no-repeat;
+    text-align: center;
+    color: #fff;
+    padding: 4rem 2rem;
+}
+
+.hero-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-text .btn.primary {
+    background-color: var(--primary-green);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.hero-text .btn.primary:hover {
+    background-color: #256a3c;
+}
+
+/* Plant Database */
+.plant-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.plant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+
+.plant-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.plant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.plant-image {
+    height: 180px;
+    background-color: var(--primary-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+}
+
+.plant-info {
+    padding: 1.5rem;
+}
+
+.plant-name {
+    color: var(--coventry-blue);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.plant-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.plant-detail {
+    font-size: 0.9rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.detail-name {
+    font-weight: bold;
+    color: var(--primary-green);
+}
+
+@media (min-width: 768px) {
+    .plant-filters {
+        flex-wrap: nowrap;
+    }
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coventry Community Garden | Grow Together</title>
+    <meta name="description" content="Join our Coventry gardening community for fresh food, sustainability, and mental wellness">
+    <meta name="author" content="Diliana Thompson | WDD230">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/weather.css">
+</head>
+<body>
+    <!-- Header with responsive navigation -->
+    <header>
+        <div class="logo">
+            <span>🌱</span>
+            <span>Coventry Community Garden</span>
+        </div>
+        <button id="hamburger" aria-label="Toggle navigation">☰</button>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="plants.html">Discover Plants</a></li>
+                <li><a href="about.html">About & Contact</a></li>
+                <li><a href="#" id="volunteer-btn">Volunteer</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Grow Coventry's Green Future</h1>
+            <p>Join our community to cultivate fresh food, sustainability, and well-being in the heart of Coventry</p>
+            <a href="#" class="btn" id="join-btn">Join Our Community</a>
+        </section>
+
+        <!-- Coventry Info -->
+        <section class="coventry-section">
+            <h2>Coventry: Our Green City</h2>
+            <p>Coventry has a rich history of community and resilience. Our garden continues this tradition by creating a sustainable green space for all residents. Located near the city centre, we're transforming urban spaces into thriving gardens that benefit both people and planet.</p>
+        </section>
+
+        <!-- Coventry Map -->
+        <div class="coventry-map">
+            <div class="map-overlay">Community Garden Location: CV1 2TT</div>
+        </div>
+
+        <!-- Weather Section -->
+        <section id="weather">
+            <h2 class="section-title">Coventry Garden Forecast</h2>
+            <div id="weather-info">
+                <div class="weather-container">
+                    <div class="weather-header">
+                        <div class="weather-title">Current Weather</div>
+                        <div class="weather-location">
+                            <span>📍</span>
+                            <span id="location">Coventry, UK</span>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-main">
+                        <div class="weather-icon" id="weather-icon">☀</div>
+                        <div>
+                            <div class="weather-temp" id="weather-temp">16°C</div>
+                            <div class="weather-desc" id="weather-desc">Partly Cloudy</div>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-details">
+                        <div class="weather-detail">
+                            <div class="detail-label">Feels Like</div>
+                            <div class="detail-value" id="feels-like">15°C</div>
+                        </div>
+                        <div class="weather-detail">
+                            <div class="detail-label">Humidity</div>
+                            <div class="detail-value" id="humidity">62%</div>
+                        </div>
+                        <div class="weather-detail">
+                            <div class="detail-label">Wind</div>
+                            <div class="detail-value" id="wind">11 km/h</div>
+                        </div>
+                        <div class="weather-detail">
+                            <div class="detail-label">Sunrise</div>
+                            <div class="detail-value" id="sunrise">5:45 AM</div>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-forecast" id="forecast">
+                        <!-- Forecast will be dynamically generated -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <h2 class="section-title">Gardening Benefits</h2>
+        <section class="benefits">
+            <div class="benefit-card">
+                <h3>🍎 Fresh Food Access</h3>
+                <p>Grow your own organic produce right in Coventry. Our garden plots provide space to cultivate vegetables, fruits, and herbs for your table.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>🌍 Sustainability</h3>
+                <p>Learn composting, water conservation, and organic gardening techniques that reduce your environmental footprint and support local ecosystems.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>🧠 Mental Wellness</h3>
+                <p>Reduce stress, improve mood, and connect with nature through therapeutic gardening activities designed for mental well-being.</p>
+            </div>
+        </section>
+
+        <!-- Upcoming Events -->
+        <h2 class="section-title">Coventry Garden Events</h2>
+        <section class="events">
+            <div class="event-list" id="event-list">
+                <!-- Events will be dynamically generated -->
+            </div>
+        </section>
+
+        <!-- Volunteer Modal -->
+        <div class="modal" id="volunteer-modal">
+            <div class="modal-content">
+                <button class="close-modal" id="close-modal" aria-label="Close modal">&times;</button>
+                <h2>Volunteer With Us</h2>
+                <p>Join our community of garden enthusiasts and help grow something beautiful in Coventry!</p>
+                <form id="volunteer-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Area of Interest</label>
+                        <select id="interest" name="interest">
+                            <option value="gardening">General Gardening</option>
+                            <option value="composting">Composting</option>
+                            <option value="education">Education Programs</option>
+                            <option value="events">Event Coordination</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Why do you want to volunteer at our Coventry garden?</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Coventry Community Garden</h3>
+                <p>Priory Street<br>Coventry, CV1 5FB</p>
+                <p>Email: info@coventrygarden.org<br>Phone: (024) 7655 4321</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="plants.html">Discover Plants</a>
+                    <a href="about.html">About & Contact</a>
+                    <a href="attributions.html">Attributions</a>
+                    <a href="https://youtu.be/demo-video" target="_blank">Project Video</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">in</a>
+                    <a href="#" class="social-icon">ig</a>
+                    <a href="#" class="social-icon">tw</a>
+                </div>
+                <div class="newsletter">
+                    <p>Subscribe to our newsletter for gardening tips and updates</p>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn" style="margin-top: 0.5rem; padding: 0.5rem 1rem;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Coventry Community Garden. All rights reserved.</p>
+            <p class="designer-credit">Designed by Diliana Thompson for WDD230</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js" type="module"></script>
+    <script src="scripts/weather.js" type="module"></script>
+    <script src="scripts/events.js" type="module"></script>
+    <script src="scripts/form.js" type="module"></script>
+</body>
+</html>
