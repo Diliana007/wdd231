@@ -28,6 +28,19 @@
             --accent-orange: #ff9800;
         }
         
+        /* Dark mode variables */
+        body.dark-mode {
+            --light-gray: #2d2d2d;
+            --white: #1a1a1a;
+            --dark-text: #f0f0f0;
+            --primary-green: #6bbd46;
+            background-color: #121212;
+        }
+        
+        body.dark-mode .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero.jpg');
+        }
+        
         /* Base Styles */
         * {
             margin: 0;
@@ -43,6 +56,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -67,6 +81,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: var(--box-shadow);
+            transition: background-color 0.3s ease;
         }
         
         .logo {
@@ -124,6 +139,7 @@
             color: var(--white);
             margin-bottom: 2rem;
             padding: 1rem;
+            transition: background-image 0.3s ease;
         }
         
         .hero h1 {
@@ -154,6 +170,7 @@
             padding: 2rem 1rem;
             text-align: center;
             margin-top: auto;
+            transition: background-color 0.3s ease;
         }
         
         .footer-content {
@@ -282,7 +299,7 @@
     </main>
 
     <!-- Footer -->
-  <footer>
+    <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Green Thumb Community Garden</h3>
@@ -324,8 +341,37 @@
         </div>
     </footer>
 
-    <!-- JavaScript Files -->
-    <script src="js/theme-toggle.js"></script>
-    <script src="js/newsletter.js"></script>
+    <!-- JavaScript -->
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        // Function to update the theme toggle icon
+        function updateThemeToggleIcon() {
+            const isDark = body.classList.contains('dark-mode');
+            themeToggle.textContent = isDark ? '☀' : '🌙';
+            themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        }
+        
+        // Check for saved theme preference
+        function checkSavedTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-mode');
+            }
+            updateThemeToggleIcon();
+        }
+        
+        // Toggle theme
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+            updateThemeToggleIcon();
+        });
+        
+        // Initialize theme on page load
+        document.addEventListener('DOMContentLoaded', checkSavedTheme);
+    </script>
 </body>
 </html>
