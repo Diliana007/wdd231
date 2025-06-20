@@ -120,7 +120,7 @@ main {
 }
 
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), url('images/garden.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/garden.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -556,5 +556,37 @@ textarea {
     
     .coventry-map {
         height: 400px;
+    }
+}
+/* styles/main.css */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: #4a8f29;
+    color: white;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+[aria-current="page"] {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Responsive hero image */
+.hero {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                     url('images/hero-small.jpg');
+}
+
+@media (min-width: 768px) {
+    .hero {
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                         url('images/hero-large.jpg');
     }
 }
