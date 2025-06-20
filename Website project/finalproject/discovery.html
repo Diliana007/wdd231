@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
     <style>
         /* Reuse styles from index.html */
@@ -211,6 +212,16 @@
             gap: 1.5rem;
         }
         
+        .footer-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
         .footer-links {
             display: flex;
             justify-content: center;
@@ -228,11 +239,37 @@
         
         .footer-links a:hover {
             background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+            color: white;
             text-decoration: none;
         }
         
+        .social-icon:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
         .copyright {
-            margin-top: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
         }
         
@@ -272,6 +309,10 @@
             .footer-links {
                 justify-content: flex-start;
             }
+            
+            .social-links {
+                justify-content: flex-start;
+            }
         }
     </style>
 </head>
@@ -282,13 +323,13 @@
             <span>🌱</span>
             <span>Green Thumb Community Garden</span>
         </div>
-        <button id="hamburger" aria-label="Toggle navigation">☰</button>
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discovery.html">Discover Plants</a></li>
                 <li><a href="about.html">About & Contact</a></li>
-                <li><a href="#" id="volunteer-btn">Volunteer</a></li>
+                <li><a href="attributions.html">Attributions</a></li>
             </ul>
         </nav>
     </header>
@@ -306,27 +347,46 @@
 
     <footer>
         <div class="footer-content">
-            <div>
+            <div class="footer-section">
                 <h3>Green Thumb Community Garden</h3>
-                <p>Address: Priory Street, Coventry, CV1 5FB</p>
+                <p><i class="fas fa-map-marker-alt"></i> Address: Priory Street, Coventry, CV1 5FB</p>
+                <p><i class="fas fa-envelope"></i> info@greenthumbgarden.org<br><i class="fas fa-phone"></i> (123) 456-7890</p>
             </div>
-            <div>
-                <h3>Hours</h3>
-                <p>Monday-Friday: 8am-7pm<br>Saturday-Sunday: 9am-5pm</p>
-            </div>
-            <div>
-                <h3>Connect</h3>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
                 <div class="footer-links">
-                    <a href="attributions.html">Attributions</a>
-                    <a href="https://youtu.be/demo-video" target="_blank">Project Video</a>
-                    <a href="tel:+11234567890">(123) 456-7890</a>
-                    <a href="mailto:info@coventrygarden.org">Email Us</a>
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <a href="discovery.html"><i class="fas fa-seedling"></i> Discover Plants</a>
+                    <a href="about.html"><i class="fas fa-info-circle"></i> About & Contact</a>
+                    <a href="attributions.html"><i class="fas fa-book"></i> Attributions</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="newsletter">
+                    <p>Subscribe to our newsletter for gardening tips and updates</p>
+                    <form>
+                        <input type="email" placeholder="Your email address" style="padding: 0.5rem; border-radius: 4px; border: none; width: 70%;">
+                        <button type="submit" class="btn" style="margin-top: 0.5rem; padding: 0.5rem 1rem;">Subscribe</button>
+                    </form>
                 </div>
             </div>
         </div>
-        <p class="copyright">&copy; Green Thumb Community Garden. All rights reserved.</p>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Green Thumb Community Garden. All rights reserved.</p>
+            <p>Designed with <i class="fas fa-heart" style="color: #ff6b6b;"></i> for a greener community</p>
+        </div>
     </footer>
-
+    
     <script type="module">
         // DOM Elements
         const hamburger = document.getElementById('hamburger');
@@ -554,6 +614,7 @@
                     <div class="plant-image">
                         <span>${plant.icon}</span>
                     </div>
+                    <div id="plant-grid"></div>
                     <div class="plant-info">
                         <h3 class="plant-name">${plant.name}</h3>
                         <p class="plant-scientific">${plant.scientific}</p>
@@ -571,5 +632,6 @@
         // Initialize
         renderPlants();
     </script>
+    <script type="module" src="./js/app.js"></script>
 </body>
 </html>

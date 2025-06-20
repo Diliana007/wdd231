@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Green Thumb</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header><!-- Same header as other pages --></header>
+
+    <main class="form-response">
+        <h1>✉ Thank You!</h1>
+        <div id="submitted-data">
+            <!-- Data will appear here -->
+        </div>
+        <a href="about.html" class="btn">Send Another Message</a>
+    </main>
+
+    <footer><!-- Same footer --></footer>
+
+    <script>
+        document.getElementById('submitted-data').innerHTML = `
+            <p><strong>Name:</strong> ${new URLSearchParams(window.location.search).get('name') || 'Not provided'}</p>
+            <p><strong>Email:</strong> ${new URLSearchParams(window.location.search).get('email') || 'Not provided'}</p>
+            <p><strong>Subject:</strong> ${new URLSearchParams(window.location.search).get('subject') || 'General inquiry'}</p>
+            <p><strong>Message:</strong> ${new URLSearchParams(window.location.search).get('message') || 'No message provided'}</p>
+            <p class="response-time">We'll respond within 2 business days.</p>
+        `;
+    </script>
+</body>
+</html>
